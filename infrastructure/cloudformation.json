@@ -611,12 +611,7 @@
                         "Ref": "CodeArtifacts"
                     }
                 },
-                "DisableInboundStageTransitions": [
-                    {
-                        "StageName": "Release",
-                        "Reason": "Disabling the transition until integration tests are completed"
-                    }
-                ]
+                "RestartExecutionOnUpdate": true
             }
         },
         "BuildProject": {
