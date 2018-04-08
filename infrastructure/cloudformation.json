@@ -619,7 +619,7 @@
         "BuildProject": {
             "Type": "AWS::CodeBuild::Project",
             "Properties": {
-                "Name": "App",
+                "Name": "App (Build)",
                 "Description": "Build app",
                 "ServiceRole": {
                     "Fn::GetAtt": [
@@ -650,7 +650,7 @@
         "TestProject": {
             "Type": "AWS::CodeBuild::Project",
             "Properties": {
-                "Name": "App",
+                "Name": "App (Test)",
                 "Description": "Build app",
                 "ServiceRole": {
                     "Fn::GetAtt": [
