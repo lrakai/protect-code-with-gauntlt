@@ -540,7 +540,10 @@
             "Type": "AWS::CodePipeline::Pipeline",
             "Properties": {
                 "RoleArn": {
-                    "Ref": "CodePipelineRole"
+                    "Fn::GetAtt": [
+                        "CodePipelineRole",
+                        "Arn"
+                    ]
                 },
                 "Stages": [
                     {
@@ -619,7 +622,7 @@
         "BuildProject": {
             "Type": "AWS::CodeBuild::Project",
             "Properties": {
-                "Name": "App (Build)",
+                "Name": "App-Build",
                 "Description": "Build app",
                 "ServiceRole": {
                     "Fn::GetAtt": [
@@ -650,7 +653,7 @@
         "TestProject": {
             "Type": "AWS::CodeBuild::Project",
             "Properties": {
-                "Name": "App (Test)",
+                "Name": "App-Test",
                 "Description": "Build app",
                 "ServiceRole": {
                     "Fn::GetAtt": [
@@ -674,7 +677,7 @@
                 },
                 "Source": {
                     "Type": "CODEPIPELINE",
-                    "buildspec": "buildspec.test.yml"
+                    "BuildSpec": "buildspec.test.yml"
                 },
                 "TimeoutInMinutes": 10
             }
