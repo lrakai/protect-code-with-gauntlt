@@ -534,7 +534,11 @@
         },
         "CodeArtifacts": {
             "Type": "AWS::S3::Bucket",
-            "Properties": {}
+            "Properties": {
+                "VersioningConfiguration": {
+                    "Status": "Enabled"
+                }
+            }
         },
         "AppPipeline": {
             "Type": "AWS::CodePipeline::Pipeline",
