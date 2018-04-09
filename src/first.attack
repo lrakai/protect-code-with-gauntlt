@@ -1,0 +1,11 @@
+# first.attack
+Feature: Simple first attack
+  Scenario:
+    When I launch a "generic" attack with:
+      """
+      ls -a
+      """
+    Then the output should contain:
+      """
+      .
+      """
