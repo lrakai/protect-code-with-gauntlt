@@ -238,7 +238,7 @@
                         }
                     }
                 ],
-                "RoleName": "codebuild-ca-app-role"
+                "RoleName": "codebuild-role"
             }
         },
         "CodePipelineRole": {
@@ -310,7 +310,7 @@
                         }
                     }
                 ],
-                "RoleName": "codepipeline-ca-app-role"
+                "RoleName": "codepipeline-role"
             }
         },
         "Cloud9Ec2InstanceRole": {
