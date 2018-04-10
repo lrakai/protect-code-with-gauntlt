@@ -1,0 +1,15 @@
+@slow
+Feature: Cross-site scripting (xss) using arachni against a URL
+  Scenario: Look for xss vulnerabilities and verify no issues are found
+    Given "arachni" is installed
+      And the following profile:
+        | name | value                 |
+        | url  | https://www.owasp.org |
+    When I launch an "arachni" attack with:
+      """
+      arachni --checks=xss --scope-page-limit=1 <url>
+      """
+    Then the output should contain:
+      """
+      0 issues were detected.
+      """
