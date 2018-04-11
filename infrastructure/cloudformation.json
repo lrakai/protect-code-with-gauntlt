@@ -702,7 +702,10 @@
                                         "ec2:AuthorizeSecurityGroupIngress",
                                         "ec2:RevokeSecurityGroupIngress",
                                         "iam:GetUser",
-                                        "iam:ListUsers"
+                                        "iam:ListUsers",
+                                        "s3:Get*",
+                                        "s3:List*",
+                                        "s3:PutObject"
                                     ],
                                     "Resource": "*"
                                 },
