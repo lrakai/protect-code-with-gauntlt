@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo Preparing for build...
+      - docker pull owasp/railsgoat:rails_5
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building the application in release mode...
+      - sleep 3
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Packaging build...
+      - zip build.zip *.yml
+
+artifacts:
+  files:
+    - build.zip
