@@ -46,10 +46,11 @@
                         "Fn::Join": [
                             "",
                             [
-                                "https://s3-us-west-2.amazonaws.com/clouda-labs-assets/",
+                                "https://github.com/lrakai/protect-code-with-gauntlt/blob/master/src/cicd/",
                                 {
                                     "Ref": "CodePipelineS3ObjectKey"
-                                }
+                                },
+                                "?raw=true"
                             ]
                         ]
                     }
