@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo Preparing for security tests...
+      - docker network create attack
+      - docker run --name railsgoat --network attack -d owasp/railsgoat:rails_5 sh -c "rails db:setup && rails server -b 0.0.0.0"
+      - docker pull gauntlt/gauntlt
+  build:
+    commands:
+      - echo Security test started on `date`
+      - echo Testing the application with Gauntlt...
+      - docker run --rm -v `pwd`:/opt/app --network attack gauntlt/gauntlt
+  post_build:
+    commands:
+      - echo Security tests completed on `date`
