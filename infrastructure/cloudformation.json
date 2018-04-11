@@ -500,12 +500,6 @@
                 "SecurityGroupIngress": [
                     {
                         "IpProtocol": "tcp",
-                        "FromPort": "22",
-                        "ToPort": "22",
-                        "CidrIp": "0.0.0.0/0"
-                    },
-                    {
-                        "IpProtocol": "tcp",
                         "FromPort": "80",
                         "ToPort": "80",
                         "CidrIp": "0.0.0.0/0"
@@ -704,6 +698,8 @@
                                         "cloud9:ValidateEnvironmentName",
                                         "ec2:DescribeSubnets",
                                         "ec2:DescribeVpcs",
+                                        "ec2:AuthorizeSecurityGroupIngress",
+                                        "ec2:RevokeSecurityGroupIngress",
                                         "iam:GetUser",
                                         "iam:ListUsers"
                                     ],
