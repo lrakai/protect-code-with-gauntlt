@@ -567,7 +567,8 @@
                                     },
                                     "S3ObjectKey": {
                                         "Ref": "CodePipelineS3ObjectKey"
-                                    }
+                                    },
+                                    "PollForSourceChanges": "true"
                                 },
                                 "RunOrder": 1
                             }
